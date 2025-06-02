@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Star Life Cycle Timeline</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2em;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+    .stage {
+      background: #111;
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .stage:hover {
+      background: #222;
+    }
+    .description {
+      display: none;
+      margin-top: 1em;
+    }
+    .stage img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1em;
+    }
+    .caption {
+      font-style: italic;
+      color: #aaa;
+      margin-top: 0.4em;
+      font-size: 0.9em;
+    }
+    .research-box {
+      background: #111;
+      border: 2px solid #444;
+      border-radius: 12px;
+      padding: 1.5em;
+      margin-top: 3em;
+      text-align: left;
+    }
+    .research-box h2 {
+      text-align: center;
+      color: #0ff;
+    }
+    .branching {
+      background: #222;
+      border: 2px solid #555;
+      border-radius: 12px;
+      padding: 1em;
+      margin: 2em 0;
+    }
+    .branching h3 {
+      color: #0ff;
+    }
+    .branching ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .branching li {
+      margin: 0.5em 0;
+    }
+  </style>
+  <script>
+    function toggleDescription(id) {
+      const desc = document.getElementById(id);
+      desc.style.display = desc.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</head>
+<body>
+  <h1>Star Life Cycle Timeline</h1>
+  <div class="timeline">
+
+    <div class="stage" onclick="toggleDescription('nebula')">
+      <h2>Nebula</h2>
+      <div class="description" id="nebula">
+        <img src="https://science.nasa.gov/wp-content/uploads/2023/04/hubble_birthofstars_0-jpg.webp" alt="Nebula" />
+        <p class="caption">Hubble image of a nebula, a vast cloud of gas and dust in space where stars are born.</p>
+        <p>
+          A nebula is a huge cloud of gas and dust situated in outer space. Some of these are star nurseries where star formation begins while others are the outer layers of red giants recently expelled. (Planetary Nebula)
+        </p>
+        <p><strong>Significance:</strong> Nebulae are essential for star formation and also recycle stellar material, seeding the galaxy with life-essential elements.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('brown-dwarf')">
+      <h2>Brown Dwarf</h2>
+      <div class="description" id="brown-dwarf">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Artist%E2%80%99s_conception_of_a_brown_dwarf_like_2MASSJ22282889-431026.jpg/1024px-Artist%E2%80%99s_conception_of_a_brown_dwarf_like_2MASSJ22282889-431026.jpg" alt="Brown Dwarf" />
+        <p class="caption">Artist's conception of a brown dwarf star, larger than a planet but smaller than a true star.</p>
+        <p>
+          Brown dwarfs are objects more massive than planets but not massive enough to sustain hydrogen fusion like true stars. They form from collapsing gas clouds but never ignite fully as stars.
+        </p>
+        <p><strong>Significance:</strong> Brown dwarfs bridge the gap between planets and stars. They help astronomers understand the diversity of celestial bodies since these objects arent in either category of a planet or star.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('protostar')">
+      <h2>Protostar</h2>
+      <div class="description" id="protostar">
+        <img src="https://cdn.esawebb.org/archives/images/screen/weic2219a.jpg" alt="Protostar" />
+        <p class="caption">A protostar glowing in infrared as a gas cloud collapses under gravity to eventually form a star.</p>
+        <p>
+          A protostar forms from a clump of gas collapsing in a nebula. It is not yet a star, but it is heating up and glowing in the infrared.
+        </p>
+        <p><strong>Significance:</strong> This is the transition from a gas cloud to a nuclear-fusing star the birth of a star.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('t-tauri')">
+      <h2>T Tauri Star</h2>
+      <div class="description" id="t-tauri">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/TTauriStarDrawing.jpg" alt="T Tauri Star" />
+        <p class="caption">Drawing of a young, variable T Tauri star surrounded by dust and strong stellar winds.</p>
+        <p>
+          A T Tauri star is a very young, variable star that forms just after the protostar stage. It is rapidly contracting and shedding material in strong stellar winds.They only form in regions of active star formation, such as stellar nurseries within molecular clouds.
+        </p>
+        <p><strong>Significance:</strong> T Tauri stars mark a critical transition phase and help us study how solar systems form around young stars and in hard conditions especially.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('main-sequence')">
+      <h2>Main Sequence Star</h2>
+      <div class="description" id="main-sequence">
+        <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/astro/universe/internal_resources/404/Main_Sequence-1.jpeg" alt="Main Sequence Star" />
+        <p class="caption">A stable main sequence star like our Sun, steadily fusing hydrogen into helium.</p>
+        <p>
+          A stable star that fuses hydrogen into helium through a process known as nuclear fusion which balance the star out and keeps it in its most stable condition in its entire life cycle. Our Sun is a example ofa yellow main sequence star.
+        </p>
+        <p><strong>Significance:</strong> These stars are the most stable and long-lasting phase, able to support life and defining galaxies.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('red-giant')">
+      <h2>Red Giant</h2>
+      <div class="description" id="red-giant">
+        <img src="https://cdn.mos.cms.futurecdn.net/rDubZBD2ryyFooKzbeRu9G-650-80.jpg.webp" alt="Red Giant" />
+        <p class="caption">An expanding red giant star, larger and cooler than the Sun, nearing the end of its life.</p>
+        <p>
+          Formed when a low/medium-mass star runs out of hydrogen and starts burning helium, expanding enormously through the subgiant phase contracting before expanding 100x-1000x the original size.
+        </p>
+        <p><strong>Significance:</strong> They enrich space with heavier elements needed for new stars and planets.</p>
+      </div>
+    </div>
+    <div class="stage" onclick="toggleDescription('planetary-nebula')">
+  <h2>Planetary Nebula</h2>
+  <div class="description" id="planetary-nebula">
+    <img src="https://cdn.esahubble.org/archives/images/screen/heic0910h.jpg" alt="Planetary Nebula">
+    <p>A planetary nebula is the glowing shell of ionized gas ejected from red giants in the late stages of their evolution. The name is misleading as they have nothing to do with planets. These nebulae are observable in visible and infrared light.</p>
+    <p><strong>Significance:</strong> Planetary nebulae are crucial for spreading heavier elements like carbon and nitrogen into the interstellar medium. These enriched materials are essential for forming future stars, planets, and potentially life itself.</p>
+  </div>
+</div>
+
+
+    <div class="stage" onclick="toggleDescription('white-dwarf')">
+      <h2>White Dwarf</h2>
+      <div class="description" id="white-dwarf">
+        <img src="https://www.ias.edu/sites/default/files/styles/one_column_large/public/White_dwarf_star_in_Celestia_06.png" alt="White Dwarf" />
+        <p class="caption">A white dwarf, the hot, dense core left behind after a star sheds its outer layers.</p>
+        <p>
+          After shedding outer layers, a star’s hot core becomes a white dwarf, slowly cooling over billions of years. 
+        </p>
+        <p><strong>Significance:</strong> These are stellar corpses that show us how sun-like stars end their lives since around 97% of our suns will eventually turn to white dwarfs..</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('black-dwarf')">
+      <h2>Black Dwarf</h2>
+      <div class="description" id="black-dwarf">
+        <img src="https://bpb-us-e2.wpmucdn.com/newsevents.illinoisstate.edu/dist/c/2/files/2020/08/PIA17258_hires-1024x576.jpg" alt="Black Dwarf" />
+        <p class="caption">Theoretical black dwarf star, a cooled white dwarf no longer emitting significant heat or light.</p>
+        <p>
+          A theoretical remnant of a white dwarf that has cooled so much it no longer emits heat or light.
+        </p>
+        <p><strong>Significance:</strong> None exist yet, but they represent the quiet, ultimate fate of sun-like stars.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('red-supergiant')">
+      <h2>Red Supergiant</h2>
+      <div class="description" id="red-supergiant">
+        <img src="https://theplanets.org/123/2021/05/red-giant-star.png" alt="Red Supergiant" />
+        <p class="caption">A massive red supergiant star, enormously expanded and unstable before going supernova.</p>
+        <p>
+          Massive stars expand into red supergiants which can get up to 500x the original size of the main sequence star before exploding. They're huge, unstable, and shed mass rapidly.
+        </p>
+        <p><strong>Importance:</strong> They set the stage for the most powerful event which is a supernova.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('supernova')">
+      <h2>Supernova</h2>
+      <div class="description" id="supernova">
+        <img src="https://cdn.esahubble.org/archives/images/thumb700x/heic0515a.jpg" alt="Supernova" />
+        <p class="caption">A supernova explosion, the brilliant death of a massive star dispersing heavy elements.</p>
+        <p>
+          A powerful explosion marking the death of a massive star. It can outshine an entire galaxy for a short time.
+        </p>
+        <p><strong>Importance:</strong> Supernovae distribute heavy elements and trigger new star formation.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('neutron-star')">
+      <h2>Neutron Star</h2>
+      <div class="description" id="neutron-star">
+        <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/03/what_is_a_neutron_star/25980139-8-eng-GB/What_is_a_neutron_star_pillars.jpg" alt="Neutron Star" />
+        <p class="caption">Dense neutron star remnant, composed almost entirely of neutrons and emitting pulses of radiation.</p>
+        <p>
+          Extremely dense stellar remnants made almost entirely of neutrons. Some pulse like cosmic lighthouses (pulsars).
+        </p>
+        <p><strong>Importance:</strong> They help us understand the limits of matter and physics under extreme conditions.</p>
+      </div>
+    </div>
+
+    <div class="stage" onclick="toggleDescription('black-hole')">
+      <h2>Black Hole</h2>
+      <div class="description" id="black-hole">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg/800px-Black_hole_-_Messier_87_crop_max_res.jpg" alt="Black Hole" />
+        <p class="caption">The black hole at the center of galaxy M87, bending light around its event horizon.</p>
+        <p>
+          The remnant of a massive star's core collapse, so dense not even light escapes. It warps space and time.
+        </p>
+        <p><strong>Significance:</strong> Black holes are key to understanding gravity, galaxies, and cosmic evolution.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="branching">
+    <h3>Branching Paths Based on Star Mass</h3>
+    <p>After the Main Sequence stage, a star's future depends on its initial mass:</p>
+    <ul>
+      <li><strong>Low-Mass Stars:</strong> Main Sequence → Red Giant → White Dwarf → (Black Dwarf in the far future)</li>
+      <li><strong>High-Mass Stars:</strong> Main Sequence → Red Supergiant → Supernova → Neutron Star or Black Hole</li>
+      <li><strong>Failed Stars:</strong> Nebula → Brown Dwarf</li>
+    </ul>
+  </div>
+
+  <div class="research-box">
+    <h2>Research Question</h2>
+    <p><strong>Interpretation of findings:</strong> The life cycle of stars forms the foundation for planets and life. Following their journey helps explain the universe’s evolution and our own origins.</p>
+    <p><strong>Verifying methods:</strong> We study star light via spectroscopy to learn composition, temperature, and age. The Hertzsprung-Russell diagram helps classify stars by mass and development stage.</p>
+    <p><strong>Conclusion:</strong> With evolving technology and data, our understanding of the universe grows. The star life cycle continues to offer insights into cosmic history and destiny.</p>
+  </div>
+</body>
+</html>
